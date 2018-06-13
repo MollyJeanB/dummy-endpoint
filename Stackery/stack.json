@@ -1,35 +1,22 @@
 {
   "nodes": [
     {
-      "id": "27764ea7",
-      "type": "function",
-      "name": "Hello!",
-      "outputs": 1,
-      "memorySize": 128,
-      "timeout": 30,
-      "runtime": "nodejs8",
-      "location": "inline",
-      "noerr": true,
-      "x": 400,
-      "y": 185,
-      "wires": [
-        []
-      ]
-    },
-    {
       "id": "f6863efb",
       "type": "function",
-      "name": "Echo",
+      "x": 400,
+      "y": 285,
+      "name": "getFromS3",
       "outputs": 1,
       "memorySize": 128,
       "timeout": 30,
       "runtime": "nodejs8",
       "location": "inline",
-      "noerr": true,
-      "x": 400,
-      "y": 285,
+      "envVars": {},
+      "entryPoint": "",
       "wires": [
-        []
+        [
+          "250414b5"
+        ]
       ]
     },
     {
@@ -41,26 +28,12 @@
       "height": 260
     },
     {
-      "id": "6a0011a2",
-      "type": "restApiEndpoint",
-      "x": 185,
-      "y": 185,
-      "name": "",
-      "path": "/",
-      "method": "GET",
-      "wires": [
-        [
-          "27764ea7"
-        ]
-      ]
-    },
-    {
       "id": "18443757",
       "type": "restApiEndpoint",
       "x": 195,
       "y": 285,
       "name": "",
-      "path": "/{message}",
+      "path": "/{fileId}",
       "method": "GET",
       "wires": [
         [
@@ -92,6 +65,19 @@
       "location": "inline",
       "envVars": {},
       "entryPoint": "",
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "250414b5",
+      "type": "objectStore",
+      "x": 605,
+      "y": 285,
+      "width": 100,
+      "height": 30,
+      "publicPermissions": "none",
+      "websiteHosting": false,
       "wires": [
         []
       ]
